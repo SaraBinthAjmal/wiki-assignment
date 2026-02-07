@@ -34,3 +34,14 @@ The application exposes Prometheus metrics to track the total number of users an
 - Password: `admin`
 
 ---
+
+## Metrics
+
+The following Prometheus metrics are exposed by the FastAPI service:
+
+- `users_created_total` – Total number of users created
+- `posts_created_total` – Total number of posts created
+
+These metrics are visualized in Grafana using rate calculations over time.
+
+---
