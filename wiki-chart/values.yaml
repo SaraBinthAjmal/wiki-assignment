@@ -1,5 +1,5 @@
 fastapi:
-  image_name:wiki-service:latest
+  image_name: wiki-service:latest
   replicas: 1
 
 Postgres:
