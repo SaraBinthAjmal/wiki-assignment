@@ -8,3 +8,17 @@ This project productionizes a simplified Wikipedia-like API service that allows 
 The application exposes Prometheus metrics to track the total number of users and posts created, which are visualized using Grafana dashboards.
 
 ---
+
+## Key Features
+
+- Dockerized FastAPI application
+- PostgreSQL-backed persistence layer
+- Prometheus metrics collection
+- Grafana dashboard for observability
+- Kubernetes Ingress for unified access
+- Configurable Docker image via Helm values
+- Resource usage constrained to fit within:
+  - 2 CPUs
+  - 4GB RAM
+  - 5GB disk
+  
