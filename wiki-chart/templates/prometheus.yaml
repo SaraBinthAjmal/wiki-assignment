@@ -1,0 +1,48 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: prometheus-config
+data:
+  prometheus.yml: |
+    global:
+      scrape_interval: 15s
+    scrape_configs:
+      -job_name: fastapi
+      metrics_paths: /matrics
+      static_configs:
+        - targets: 
+            - fastapi: 8000
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prometheus
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prometheus
+  template: 
+    metadata:
+      labels:
+        apps: prometheus
+    spec: 
+      containers:
+        - name: prometheus
+          image: prom/prometheus:v2.52.0
+          args:
+            - "--config.file=/etc/prometheus/prometheus.yml" 
+          volumeMountsL:
+            - name: config
+              mountPathh: /etc/prometheus
+          resources:
+            requests:
+            cpu: "100m"
+            memory: "256Mi"
+          limiits: 
+            cpu: "500m"
+            memory: "512Mi"
+      volumes:
+        - name: config
+          configMap:
+            name: prometheus-config
