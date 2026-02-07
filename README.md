@@ -37,7 +37,7 @@ The application exposes Prometheus metrics to track the total number of users an
 
 ## Metrics
 
-The following Prometheus metrics are exposed by the FastAPI service:
+The following Prometheus metrics are exposed by the FastAPI service
 
 - `users_created_total` – Total number of users created
 - `posts_created_total` – Total number of posts created
