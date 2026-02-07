@@ -21,4 +21,16 @@ The application exposes Prometheus metrics to track the total number of users an
   - 2 CPUs
   - 4GB RAM
   - 5GB disk
-  
+
+  ## Exposed Endpoints
+
+### Application APIs
+- `/users/*` → FastAPI service
+- `/posts/*` → FastAPI service
+
+### Grafana Dashboard
+- `/grafana/d/creation-dashboard-678/creation`
+- Username: `admin`
+- Password: `admin`
+
+---
