@@ -5,7 +5,7 @@ from starlette.responses import Response
 app = FastAPI()
 
 users_created = Counter("users_created-total", "Total users Created")
-posts_created = Counter("users_created-total", "Total users Created")
+posts_created = Counter("posts_created-total", "Total posts Created")
 
 @app.post("/users/")
 def create_user():

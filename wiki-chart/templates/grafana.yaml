@@ -10,13 +10,15 @@ spec:
   template: 
     metadata:
       labels:
-        apps: grafana
+        app: grafana
     spec:
       containers: 
       - name: grafana
         image: grafana/grafana:10.2.0
         env:
-        - name:GF_SECURITY_ADMIN_USER
-          value: admin
-        - name:GF_SECURITY_ADMIN_PASSWORD
-          value: admin
+        - name: GF_SECURITY_ADMIN_USER
+          value: "{{ .Values.grafana.adminUser }}"
+        - name: GF_SECURITY_ADMIN_PASSWORD
+          value: "{{ .Values.grafana.adminPassword }}"
+        ports:
+        - containerPort: 3000

@@ -2,7 +2,7 @@ fastapi:
   image_name: wiki-service:latest
   replicas: 1
 
-Postgres:
+postgres:
   image: postgres:15
   user: wiki
   password: wiki
